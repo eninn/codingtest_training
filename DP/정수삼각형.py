@@ -12,7 +12,6 @@
 """
 
 def solution(triangle):
-    answer = 0
     
     # 1층부터 순서대로 더한다.
     calcs = []

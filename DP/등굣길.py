@@ -1,6 +1,6 @@
 # 프로그래머스 등굣길 문제
 # https://school.programmers.co.kr/learn/courses/30/lessons/42898
-# 17:26-
+# 17:26-18:00+09:17-09:23
 
 """
 격자모양 지도(m*n)에서 물에 잠긴 좌표 puddles를 회피하여, 오른쪽과 아래로만 움직여 집에서 학교까지 갈수있는 최단경로 개수를
@@ -10,7 +10,6 @@
 """
 from typing import List
 import sys
-sys.setrecursionlimit(10**6)
 
 def solution(m:int, n:int, puddles:List):
     answer = 0
@@ -28,13 +27,17 @@ def solution(m:int, n:int, puddles:List):
                 continue
             
             if i == 0 and j == 0:
-                map[i][j] = 1
-                continue
-            
-            if j == 0:
-                map[i][j] = map[i-1][j]
+                map[i][j] = 1            
+            elif j == 0:
+                if map[i-1][j] == -1:
+                    map[i][j] = 0
+                else:
+                    map[i][j] = map[i-1][j]
             elif i == 0:
-                map[i][j] = map[i][j-1]
+                if map[i][j-1] == -1:
+                    map[i][j] = 0
+                else:
+                    map[i][j] = map[i][j-1]
             else:
                 if map[i-1][j] == -1:
                     map[i][j] = map[i][j-1]
