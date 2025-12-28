@@ -22,7 +22,7 @@ def solution(n:int, costs:list):
     
     # union-find 알고리즘 사용.
     # find 함수: parent 가 자신일때까지 반복해서 재귀함.
-    def find(parent, x ):
+    def find(parent, x):
         if parent[x] != x:
             parent[x] = find(parent, parent[x])
         return parent[x]
