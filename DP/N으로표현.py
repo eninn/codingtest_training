@@ -1,7 +1,6 @@
 # 프로그래머스 N으로표현 문제
 # https://school.programmers.co.kr/learn/courses/30/lessons/42895
 # 15:38-16:22
-
 """
 숫자 N과 사칙연산을 사용해서 숫자 num 표현하기.
 N의 사용횟수중 최소값을 리턴한다.
